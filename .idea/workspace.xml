@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2b10c13-c37c-4c2e-9a35-0946d0851e12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
     </list>
@@ -82,26 +81,26 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="691" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1590088667113" />
-    <state x="1026" y="162" key="FileChooserDialogImpl" timestamp="1590012116464">
+    <state x="1026" y="162" key="FileChooserDialogImpl" timestamp="1590176996488">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1026" y="162" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1590012116464" />
-    <state width="1254" height="164" key="GridCell.Tab.0.bottom" timestamp="1590090358934">
+    <state x="1026" y="162" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1590176996488" />
+    <state width="1252" height="164" key="GridCell.Tab.0.bottom" timestamp="1590176780848">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1254" height="164" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1590090358934" />
-    <state width="1254" height="164" key="GridCell.Tab.0.center" timestamp="1590090358934">
+    <state width="1252" height="164" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1590176780848" />
+    <state width="1252" height="164" key="GridCell.Tab.0.center" timestamp="1590176780848">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1254" height="164" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1590090358934" />
-    <state width="1254" height="164" key="GridCell.Tab.0.left" timestamp="1590090358934">
+    <state width="1252" height="164" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1590176780848" />
+    <state width="1252" height="164" key="GridCell.Tab.0.left" timestamp="1590176780848">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1254" height="164" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1590090358934" />
-    <state width="1254" height="164" key="GridCell.Tab.0.right" timestamp="1590090358934">
+    <state width="1252" height="164" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1590176780848" />
+    <state width="1252" height="164" key="GridCell.Tab.0.right" timestamp="1590176780848">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1254" height="164" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1590090358934" />
+    <state width="1252" height="164" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1590176780848" />
     <state width="1247" height="317" key="GridCell.Tab.1.bottom" timestamp="1589412919153">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -122,9 +121,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1040@0.0.2560.1040" timestamp="1590010393909" />
-    <state x="940" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1590086340998">
+    <state x="940" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1590169602036">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="940" y="350" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1590086340998" />
+    <state x="940" y="350" key="com.intellij.ide.util.TipDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1590169602036" />
   </component>
 </project>

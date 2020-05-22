@@ -2,7 +2,88 @@ import pymysql.cursors
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
+import matplotlib.pyplot as plt
 import sys
+
+
+def analizar_estoque():
+    anal = Tk()
+    anal.iconbitmap('favicon.ico')
+    anal.geometry('660x350')
+    anal.title('Analizar Estoque')
+    anal.configure(bg='#FFFFF0')
+
+    conexao = pymysql.connect(
+        host='den1.mysql4.gear.host',
+        user='integredb1',
+        password='Ao89Qen9i!A?',
+        database='integredb1',
+    )
+
+    cursor = conexao.cursor()
+
+    cursor.execute('SELECT * FROM integredb1.estoque')
+
+    resultado = cursor.fetchall()
+
+    sum = 0
+    list_quant = []
+    list_produtos = []
+    list_valores = []
+    val = 0
+    quan = 0
+
+    for produto in resultado:
+        list_produtos.append(produto[1])
+        list_valores.append(float(produto[2].replace(',','.')))
+        list_quant.append(float(produto[3]))
+
+        sum += 1
+
+
+    for x in list_valores:
+        val = x + val
+
+    media = val/len(list_valores)
+
+    for x in list_valores:
+        quan = x + quan
+
+
+
+
+    frame_anal = LabelFrame(anal, padx=50, pady=20, bg='#FFFFF0', font="Verdana 20 ", fg='black', bd=3)
+    frame_anal.grid(column=0, row=0, padx=100, pady=30)
+
+    valor_label = Label(frame_anal, text='Valor Total: R$' + str(val), bg='#FFFFF0', font="Verdana 15 ", fg='black')
+    valor_label.grid(row=1, column=0)
+
+    valor_medio__label = Label(frame_anal, text='Valor Médio: R$' + str(round(media,2)), bg='#FFFFF0', font="Verdana 15 ", fg='black')
+    valor_medio__label.grid(row=2, column=0)
+
+    quant_label = Label(frame_anal, text='Quantidade Total: ' + str(quan), bg='#FFFFF0', font="Verdana 15 ", fg='black')
+    quant_label.grid(row=0, column=0)
+
+    quant_min_label = Label(frame_anal, text='Tipos de Produto: ' + str(sum), bg='#FFFFF0', font="Verdana 15 ", fg='black')
+    quant_min_label.grid(row=3, column=0)
+
+    quant_min_label = Label(anal, text='Para uma analize mais detalhada acessar a planilha no Power BI', bg='#FFFFF0', font="Verdana 15 ",fg='black')
+    quant_min_label.grid(row=2, column=0)
+
+
+
+    plt.figure(figsize=(20,15), dpi=80)
+    plt.hlines(y=list_produtos[:50], xmin=0, xmax= list_quant, alpha=0.4, linewidth=3,color = 'orange')
+    plt.grid(linestyle='--', alpha=0.5)
+    plt.gca().set(ylabel='$Produto$', xlabel='$Qauntidade$')
+    plt.yticks(list_produtos[:50], fontsize=12)
+    plt.grid(linestyle='--', alpha=0.5)
+    for x, y, tex in zip(list_quant, list_produtos[:50], list_quant):
+        t = plt.text(x, y, round(tex, 2), horizontalalignment='right' if x < 0 else 'left',
+                     verticalalignment='center', fontdict={'color': 'red' if x < 0 else 'green', 'size': 14})
+    plt.title('Quantidade por Produto(Primeiros 50)', fontdict={'size': 20})
+    plt.show()
+
 
 def sair():
     sys.exit()
@@ -284,7 +365,7 @@ def retirar_produto():
 
 root = Tk()
 root.iconbitmap('favicon.ico')
-root.geometry('930x990')
+root.geometry('930x925')
 root.title('Sistema de Controle de Estoque')
 imagem = ImageTk.PhotoImage(file="logout.png")
 root.resizable(0, 0)
@@ -376,7 +457,7 @@ for estoque in resultado:
 
 i = 0
 for estoque in resultado:
-    if(int(estoque[3]) - int(estoque[4]) < 0.3 * int(estoque[3])):
+    if(int(estoque[3]) - int(estoque[4]) < 0.3 * int(estoque[3]) and int(estoque[3]) - int(estoque[4]) > 0.1 * int(estoque[3])):
         list_label = Label(frame6, text= str(estoque[1]), bg='#FFFFF0', font="Verdana 10 ", fg='orange')
         list_label.grid(row = i, column = 0)
         i+=1
@@ -394,7 +475,7 @@ edit_button.grid(row=1, column=0, pady=15, padx=15, ipadx=34, ipady = 3)
 sair_button = Button(frame4, text="Sair", command = sair, font = "Verdana 8 bold", fg = 'black', bg = '#F5F5F5', image = imagem)
 sair_button.grid(row=0, column=0, pady=5, padx=15, ipadx=40, ipady = 3)
 
-anal_button = Button(frame3, text="Analizar Estoque", command = sair, font = "Verdana 8 bold", fg = 'black', bg = '#F5F5F5')
+anal_button = Button(frame3, text="Analizar Estoque", command = analizar_estoque, font = "Verdana 8 bold", fg = 'black', bg = '#F5F5F5')
 anal_button.grid(row=1, column=0, pady=20, padx=15, ipadx=40, ipady = 3)
 
 
